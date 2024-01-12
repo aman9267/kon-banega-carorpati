@@ -1,39 +1,142 @@
-.App {
-  text-align: center;
+.app{
+  height: 100vh;
+  display: flex;
+  background-color: #020230;
+  color: #fff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.main{
+  width: 75%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0), #020230), url('./assets/bg.jpg') center;
+  display: flex;
+  flex-direction: column;
+
+}
+.pyramid{
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.money-list{
+  list-style: none;
+  width: 100%;
+  padding: 20px;
+}
+.money-list-items{
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-radius: 5px;
+}
+.money-list-items.active{
+  background-color: teal;
+}
+.money-list-number{
+  font-size: 18px;
+  font-weight: 100;
+  width: 30%;
+}
+.money-list-amount{
+  font-size: 20px;
+  font-weight: 300;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.top{
+  height: 50%;
+  position: relative;
 }
+.timer{
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  border-color: #fff;
+  border: 5px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: 700;
+  position: absolute;
+  bottom: 15px;
+  left: 50px;
+}
+.bottom{
+  height: 50%;
 
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+}
+.trivia{
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
+}
+.question{
+  width: 80%;
+  background: linear-gradient(#100241, black);
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid white;
+  font-size: 20px;
+}
+.answers{
+  width: 100%;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-wrap: wrap;
+
+}
+.answer{
+  width: 40%;
+  padding: 10px;
+  margin: 0 10px 20px 10px;
+  text-align: center;
+  background: linear-gradient(#0e0124, #22074d);
+  border: 1px solid white;
+  border-radius: 15px;
+  font-weight: 400;
+  font-size: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.answer:hover, .answer.active{
+  background: mediumblue;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+.answer.correct{
+  animation: correct 3s forwards;
+}
+@keyframes correct {
+  0%, 25%, 45%, 60%, 80%, 100%{
+    background: mediumblue;
   }
-  to {
-    transform: rotate(360deg);
+  20%, 35%, 53%, 70%, 90%{
+    background: linear-gradient(#0e0124, #22074d);
+  }
+  100%{
+    background: green;
+  }
+}
+
+
+.answer.wrong{
+  animation: wrong 3s forwards;
+}
+
+@keyframes wrong {
+  0%, 25%, 45%, 60%, 80%, 100%{
+    background: mediumblue;
+  }
+  20%, 35%, 53%, 70%, 90%{
+    background: linear-gradient(#0e0124, #22074d);
+  }
+  100%{
+    background: red;
   }
 }
