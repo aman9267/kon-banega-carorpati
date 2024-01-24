@@ -399,6 +399,7 @@ function App() {
     <>
       <div className="app">
         <div className="main">
+          <div className="top">{/* <div className="timer">30</div> */}</div>
           <div className="bottom">
             <Trivia
               data={data}

@@ -20,7 +20,6 @@ const Trivia = ({ data, questionActive, setQuestionActive }) => {
   const handleClick = (answer) => {
     setSelectedAnswer(answer);
     setClassName("answer active");
-
     delay(3000, () => {
       setClassName(answer.correct === true ? "answer correct" : "answer wrong");
     });
